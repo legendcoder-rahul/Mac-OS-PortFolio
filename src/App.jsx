@@ -1,9 +1,12 @@
 import "./app.scss"
+import Dock from "./components/Dock"
 
 const App = () => {
   return (
     <div>
-      <main></main>
+      <main>
+        <Dock/>
+      </main>
     </div>
   )
 }
