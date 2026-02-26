@@ -1,22 +1,23 @@
 import React from 'react'
 import "./dock.scss"
+import Spotify from './windows/Spotify'
 
-const Dock = () => {
+const Dock = ({windowsState, setWindowState}) => {
     return (
         <footer className='dock'>
-            <div className="icon github">
+            <div onClick={()=>{setWindowState(state=>({...state,github:true}))}} className="icon github">
                 <img src="/doc-icons/github.svg" alt="" />
             </div>
-            <div className="icon note">
+            <div onClick={()=>{setWindowState(state=>({...state,note:true}))}} className="icon note">
                 <img src="/doc-icons/note.svg" alt="" />
             </div>
-            <div className="icon pdf">
+            <div onClick={()=>{setWindowState(state=>({...state,resume:true}))}} className="icon pdf">
                 <img src="/doc-icons/pdf.svg" alt="" />
             </div>
             <div className="icon calender">
                 <img src="/doc-icons/calender.svg" alt="" />
             </div>
-            <div className="icon spotify">
+            <div onClick={()=>{setWindowState(state=>({...state,spotify:true}))}} className="icon spotify">
                 <img src="/doc-icons/spotify.svg" alt="" />
             </div>
             <div className="icon mail">
@@ -25,7 +26,7 @@ const Dock = () => {
             <div className="icon link">
                 <img src="/doc-icons/link.svg" alt="" />
             </div>
-            <div className="icon cli">
+            <div onClick={()=>{setWindowState(state=>({...state,cli:true}))}} className="icon cli">
                 <img src="/doc-icons/cli.svg" alt="" />
             </div>
         </footer>

@@ -2,12 +2,12 @@ import React from 'react'
 import { Rnd } from 'react-rnd'
 import "./windows.scss"
 
-const MacWindows = ({children}) => {
+const MacWindows = ({children, width='40vw', height='40vh',windowName, setWindowsState }) => {
     return (
         <Rnd
         default={{
-            width:'40vw',
-            height:'40vh',
+            width:width,
+            height:height,
             x:300,
             y:200
         }}
@@ -15,7 +15,7 @@ const MacWindows = ({children}) => {
             <div className="window">
                 <div className="nav">
                     <div className="dots">
-                        <div className="dot red"></div>
+                        <div onClick={() => setWindowsState(state => ({ ...state, [windowName]: false }))} className="dot red"></div>
                         <div className="dot yellow"></div>
                         <div className="dot green"></div>
                     </div>

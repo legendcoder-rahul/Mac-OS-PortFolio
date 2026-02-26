@@ -1,6 +1,6 @@
-import React from 'react'
-import MacWindows from './windows/MacWindows'
-import githubData from "../assets/github.json"
+
+import MacWindows from './MacWindows'
+import githubData from "../../assets/github.json"
 import './github.scss'
 
 const GitCard = ({ data={id:1, image:'', title:'', description:'', tags:[], repoLink:'', demoLink:''}}) =>{
@@ -22,12 +22,12 @@ const GitCard = ({ data={id:1, image:'', title:'', description:'', tags:[], repo
     </div>
 }
 
-const Github = () => {
+const Github = ({windowName, windowsState, setwindowState}) => {
   return (
-   <MacWindows>
+   <MacWindows windowName={windowName} windowsState={windowsState} setWindowState={setwindowState}>
     <div className="cards">
-        {githubData.map(project =>{
-            return <GitCard data={project}/>
+        {githubData.map((project,id) =>{
+            return <GitCard key={id} data={project}/>
         })}
     </div>
    </MacWindows>
